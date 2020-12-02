@@ -28,32 +28,26 @@
     // Array.prototype.filter()
     // 1. filterを使ってスターウォーズのキャラクターのうち、現在60代のキャラクターだけを戻り値としてコンソールに返してみましょう。
     // ヒント：関数と演算子を使います。
-    const Sixtys = characters.filter( value => {
-      return value.age >= 60 && value.age < 70; //60代のキャラクター
+    const Sixtys = characters.filter( character => {
+      return character.age >= 60 && character.age < 70; //60代のキャラクター
     });
     console.table(Sixtys);
 
     // Array.prototype.map()
     // 2. スターウォーズ登場人物で上記にある全員の苗字と下の名前の配列を戻り値としてコンソールに返してみましょう。
     // ヒント：関数と変数を使います。
-    function fullName(counter) {
-      const firstName = characters[counter].first;
-      const lastName = characters[counter].last;
-      return firstName + lastName;
-    }
+    // function fullName(counter) {
+    //   const firstName = characters[counter].first;
+    //   const lastName = characters[counter].last;
+    //   return firstName + lastName;
+    // }
+    let fullName = 0;
 
-    console.log(fullName(0));
-    console.log(fullName(1));
-    console.log(fullName(2));
-    console.log(fullName(3));
-    console.log(fullName(4));
-    console.log(fullName(5));
-    console.log(fullName(6));
-    console.log(fullName(7));
-    console.log(fullName(8));
-    console.log(fullName(9));
-    console.log(fullName(10));
-    console.log(fullName(11));
+    for (i=0; i<12; i++){
+      const firstName = characters[i].first;
+      const lastName = characters[i].last;
+      console.log(firstName + lastName);
+    }
 
     // スプレッド演算子 オブジェクトの追加
     // 3. スプレッド演算子を使って、ルークにジェダイの所属情報（オブジェクト）を追加しましょう。
